@@ -5,6 +5,8 @@ const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+const indexRouter = require('./routes/index.router');
+const mainPageRouter = require('./routes/mainPage.router');
 const signup = require('./routes/signup.router')
 const signin = require('./routes/signin.router')
 
@@ -35,11 +37,12 @@ app.use(express.json());
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 app.use(cookieParser());
 
-// место для middleware 
+// место для middleware
 
 // место для ручек
-app.use('/signup', signup);
-app.use('/signin', signin);
-
+app.get('/', indexRouter);
+app.get('/cycling-trips', mainPageRouter);
+app.use('/cycling-trips/signup', signup);
+app.use('/cycling-trips/signin', signin);
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));
