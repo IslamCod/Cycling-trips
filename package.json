@@ -1,0 +1,42 @@
+{
+  "name": "cycling-trips",
+  "version": "1.0.0",
+  "description": "Главная страница",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IslamCod/Cycling-trips.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IslamCod/Cycling-trips/issues"
+  },
+  "homepage": "https://github.com/IslamCod/Cycling-trips#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "fs-store": "^0.3.2",
+    "hbs": "^4.2.0",
+    "node-fetch": "^2.6.7",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.2",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "sequelize-cli": "^6.4.1"
+  }
+}
