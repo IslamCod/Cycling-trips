@@ -7,6 +7,8 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const indexRouter = require('./routes/index.router');
 const mainPageRouter = require('./routes/mainPage.router');
+const signup = require('./routes/signup.router')
+const signin = require('./routes/signin.router')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -40,5 +42,7 @@ app.use(cookieParser());
 // место для ручек
 app.get('/', indexRouter);
 app.get('/cycling-trips', mainPageRouter);
+app.use('/cycling-trips/signup', signup);
+app.use('/cycling-trips/signin', signin);
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));
