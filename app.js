@@ -47,8 +47,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', indexRouter);
-app.get('/cycling-trips', mainPageRouter);
+app.use('/', indexRouter);
+app.use('/cycling-trips', mainPageRouter);
 app.use('/signup', signup);
 app.use('/signin', signin);
 app.use('/logout', logout);

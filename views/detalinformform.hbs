@@ -1,24 +1,19 @@
 <form class="createnewform" action="/cycling-trips/detalinformform" method="post">
     <div class="mb-3">
  <div>Karta</div>
- <div>long{{trip.length}}</div>
+ <div>name form{{trip.title}}</div>
  <div>city{{trip.place}}</div>
- <div>name form{{trip.}}</div>
+ <div>long{{trip.length}}</div>
  <div>author{{userName}}</div>
- {{#each title}}
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Название нового маршрута</label>
-    <input name="text" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите название нового маршрута.</div>
-  </div>
-   <label for="exampleInputPassword1" class="form-label">Описание нового маршрута</label>
-    <input name="text" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
-  <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
-  <div id="registr" class="form-text">Проверьте правильность введенных данных.</div>
+ <div>rating{{trip.rating}}</div>
+ 
   {{#if userButNoAuthor}}
-
-
+  <div class="comit">
+  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <div id="emailHelp" class="form-text">Оцените, пожалуйста, маршрут</div>
+  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <div id="emailHelp" class="form-text">Оставьте, пожалуйста, свой отзыв о маршруте</div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+  </div>
   {{/if}}
 </form>
