@@ -6,20 +6,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        {{#unless userName}}
+        {{!-- {{#if user}}//логаут работет  --}}
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/cycling-trips/signup">Sign Up</a>
+                <p class="nav-link">{{user}}</p>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/cycling-trips/signin">Sign In</a>
+                <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
             </li>
-        {{/unless}}
-        {{#if userName}}
+        {{else}}
             <li class="nav-item">
-                <p class="nav-link">{{userName}}</p>
+                <a class="nav-link active" aria-current="page" href="/signup">Sign Up</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/cycling-trips/logout">Logout</a>
+                <a class="nav-link" href="/signin">Sign In</a>
             </li>
         {{/if}}
       </ul>
