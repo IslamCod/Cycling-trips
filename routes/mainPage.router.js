@@ -1,13 +1,14 @@
 const router = require('express').Router();
+const { Trip } = require('../db/models');
 
-// router.get('/', (req, res) => {
-//   res.redirect('/trips');
-// });
+router.get('/', (req, res) => {
+  res.redirect('/cycling-trips');
+});
 
-router.get('/cycling-trips', (req, res) => {
-  const { user_id, place, length } = req.body;
-
-  res.render('mainPage');
+router.get('/cycling-trips', async (req, res) => {
+  const allTrips = await Trip.findAll();
+  console.log({ allTrips });
+  res.render('mainPage', { allTrips });
 });
 
 module.exports = router;

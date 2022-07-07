@@ -1,25 +1,23 @@
 <form name="createnewform" class="createnewform">
   <div class="mb-3">
 
-    <div id="map" style="width: 100vh; height: 50vw"></div>
+    <div id="map" class="map" style="width: 100vh; height: 50vw"></div>
 
     <div class="mb-3">
-      {{! <label for="exampleInputPassword1" class="form-label">Название нового маршрута</label> }}
       <input
-        name="nameform"
+        name="title"
         type="text"
         class="form-control"
         id="exampleInputPassword1"
+        placeholder="Введите название нового маршрута"
       />
-      <div id="emailHelp" class="form-text">Введите название нового маршрута.</div>
     </div>
   <input
-    name="comform"
+    name="location"
     type="text"
     class="form-control"
     id="exampleInputPassword1"
+    placeholder="Введите локацию"
   />
-  <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
   <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
-  {{! <div id="registr" class="form-text">Проверьте правильность введенных данных.</div> }}
 </form>
