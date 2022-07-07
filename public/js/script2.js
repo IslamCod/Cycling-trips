@@ -6,7 +6,7 @@ console.log(document.forms);
 createnewform?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(createnewform));
-  console.log({ ...data, createnewform, tripConfig });
+  // console.log({ ...data, createnewform, tripConfig });
   const response = await fetch("/cycling-trips/createnewform", {
     method: "POST",
     headers: {
@@ -80,7 +80,7 @@ function init() {
         // console.log(tripConfig);
 
         // route = {length:text, start, finish}
-        console.log(tripConfig);
+        // console.log(tripConfig);
       }
     });
   });

@@ -16,12 +16,13 @@ module.exports = {
       [
         {
           user_id: 1,
-          name: "Check trip",
-          place: "Moscow",
+          title: "Check trip",
+          location: "Moscow",
           length: "200m",
-          link: "123",
+          start: '1',
+          finish:"23",
           map: "?",
-          reiting: "5",
+          rating: "5",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

@@ -10,19 +10,31 @@ router.get("/:id", async (req, res) => {
   // console.log(">>>>>", trip);
   const user = await User.findOne({ where: { id: id } });
 
-  res.render("detalinformform", { trip, user });
+  let posts;
+  try {
+    posts = await Like.findAll({ order: [["id", "DESC"]] });
+  } catch (error) {
+    return res.render("error", {
+      message: "Не удалось получить записи из базы данных.",
+      error: {},
+    });
+  }
+  res.render("detalinformform", { trip, user, posts });
 });
 
 // /cycling-trips/detalinformform/comment
 router.post("/:id", async (req, res) => {
-  const comment = req.body;
-  // const comments =  await Like.create({
-  //   user_id: user.id,
-  //   trip_id: id,
-  //   comment,
-  //   like: 3,
-  // });
-  res.json({ message: "Ok" });
+  const id = req.params.id;
+  // const comment = req.body;
+  const comment = await Like.create({
+    user_id: 1,
+    trip_id: id,
+    comment: req.body.comment,
+    like: 3,
+  });
+  console.log("!!!!", comment);
+
+  res.json(comment);
 });
 
 module.exports = router;

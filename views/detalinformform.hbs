@@ -6,7 +6,7 @@
   <div class="mb-3">
     <div>Название маршрута: {{trip.name}}</div>
     <div>Автор: {{user.name}}</div>
-    <div>Город: {{trip.place}}</div>
+    <div>Город: {{trip.location}}</div>
     <div>Длина: {{trip.length}}</div>
     {{!-- <div>name form{{formName}}</div> --}}
     {{!-- {{#each title}} --}}
@@ -33,9 +33,12 @@
     ></textarea>
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-  <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
-  <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
-  <div id="registr" class="form-text">Проверьте правильность введенных данных.</div>
+  <div id="postList">
+    {{#each posts}}
+    <div>{{this.comment}}</div>
+        {{/each}}
+  </div>
+
   {{!-- {{#if userName}}
 
 
