@@ -1,7 +1,7 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-router.get("/", (req, res) => {
-  res.redirect("/cycling-trips");
+router.get('/', (req, res) => {
+  res.redirect('/cycling-trips');
 });
 
 module.exports = router;
