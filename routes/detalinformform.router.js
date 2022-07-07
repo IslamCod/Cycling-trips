@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/:name', async (req, res) => {
+router.get('/', async (req, res) => {
   res.render('detalinformform');
 });
 
