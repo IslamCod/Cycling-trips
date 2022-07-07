@@ -1,15 +1,25 @@
-<form class="createnewform" action="/cycling-trips/createnewform/{{id}}" method="post">
-    <div class="mb-3">
- 
- 
+<form name="createnewform" class="createnewform">
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Название нового маршрута</label>
-    <input name="nameform" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите название нового маршрута.</div>
-  </div>
-   <label for="exampleInputPassword1" class="form-label">Описание нового маршрута</label>
-    <input name="comform" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
+
+    <div id="map" style="width: 100vh; height: 50vw"></div>
+
+    <div class="mb-3">
+      {{! <label for="exampleInputPassword1" class="form-label">Название нового маршрута</label> }}
+      <input
+        name="nameform"
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+      <div id="emailHelp" class="form-text">Введите название нового маршрута.</div>
+    </div>
+  <input
+    name="comform"
+    type="text"
+    class="form-control"
+    id="exampleInputPassword1"
+  />
+  <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
   <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
-  <div id="registr" class="form-text">Проверьте правильность введенных данных.</div>
+  {{! <div id="registr" class="form-text">Проверьте правильность введенных данных.</div> }}
 </form>
