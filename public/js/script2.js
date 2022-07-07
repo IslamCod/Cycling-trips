@@ -59,7 +59,7 @@ function init() {
         // console.log(tripConfig);
 
         // route = {length:text, start, finish}
-        console.log(tripConfig);
+        console.log('conf', tripConfig);
         
 
        
@@ -74,19 +74,18 @@ const { createnewform } = document.forms;
 createnewform.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(createnewform))
-  console.log({...data, createnewform, tripConfig});
-  const response = await fetch ('/cycling-trips/createnewform', {
+  console.log(data, 'createnewform', createnewform, 'tripConfig', tripConfig);
+  const response = await fetch ('/createnewform', {
     method: 'POST',
     headers:{
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({...data, tripConfig})
+    body: JSON.stringify({...data, ...tripConfig})
   })
 
   if(response.ok){
+    // const data = await response.json();
     
-    
-
   }
 });
 

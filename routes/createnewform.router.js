@@ -1,12 +1,28 @@
 const router = require('express').Router();
+const { Trip } = require("../db/models")
 
 router.get('/', (req, res) => { // id 
   res.render('createnewform');
 });
 
-router.post('/', (req, res) => {
-  console.log(11111);
-  console.log(req.body);
+router.post('/', async (req, res) => {
+  const { title, length, start, finish, location} = req.body;
+
+  try {
+    console.log(req.body);
+    await Trip.create({ 
+      title, 
+      user_id: req.session.user_id,
+      length,
+      start: JSON.stringify(start),
+      finish: JSON.stringify(finish),
+      location});
+      
+      res.json({title, length, start, finish, location})
+  } catch (er) {
+    console.log(er);
+  }
+  
     
 })
 
