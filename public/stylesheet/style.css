@@ -36,3 +36,19 @@
     background-color: rgb(208, 166, 41); /* Цвет подчеркивания при появлении линии*/
     transition: width 0.5s;  /* Время эффекта */
 }
+
+.card-body {
+  width: 400px;
+  height: 500px;
+}
+.test {
+  
+  width: 70%;
+  margin: 0 auto;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid red;
+}

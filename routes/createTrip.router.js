@@ -11,7 +11,7 @@ router.route()
     res.json({ status: false });
   }
 
-  res.redirect("/cycling-trips");
+  res.redirect("/cycling-trips/createnewform");
 });
 
 module.exports = router;
