@@ -5,7 +5,8 @@ const router = require('express').Router();
 // });
 
 router.get('/cycling-trips', (req, res) => {
-    console.log(req.query);
+  const { user_id, place, length } = req.body;
+
   res.render('mainPage');
 });
 
