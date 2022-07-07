@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
   Trip.init({
     user_id: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    place: DataTypes.STRING,
+    place: DataTypes.STRING,//? начало и конец
     length: DataTypes.STRING,
-    link: DataTypes.TEXT,
+    link: DataTypes.TEXT,//?
     map: DataTypes.TEXT,
   }, {
     sequelize,

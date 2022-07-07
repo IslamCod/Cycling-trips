@@ -1,11 +1,12 @@
 const router = require("express").Router();
 
 router.route()
-.get("/path", async (req, res) => {
-  const newTrip = req.body;
+.post("/", async (req, res) => {
+  const { name } = req.body;
   try {
     const result = await Trip.create(newTrip);
-    res.json({ status: true });
+    console.log(result);
+    res.json(result);
   } catch (err) {
     res.json({ status: false });
   }
