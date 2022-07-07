@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/:id', async (req, res) => {
+router.get('/', async (req, res) => {
   res.render('createnewform');
 });
 
