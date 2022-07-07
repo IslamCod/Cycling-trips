@@ -17,12 +17,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   Trip.init({
     user_id: DataTypes.INTEGER,
-    name: DataTypes.STRING,
-    place: DataTypes.STRING,//? начало и конец
+    title: DataTypes.STRING,
+    location: DataTypes.STRING,
     length: DataTypes.STRING,
-    link: DataTypes.TEXT,//?
+    start: DataTypes.TEXT,
+    finish: DataTypes.TEXT,
     map: DataTypes.TEXT,
-    reiting: DataTypes.STRING
+    rating: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Trip',

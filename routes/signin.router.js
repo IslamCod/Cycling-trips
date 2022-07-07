@@ -14,7 +14,7 @@ router.post('/', checkSession, async (req, res) => {
     req.session.userName = user.name;
     req.session.userId = user.id;
     console.log(res.locals);
-    return res.redirect('/');
+    return res.redirect('/createnewform');
   }
   return res.render('error');
 });

@@ -5,7 +5,6 @@ const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-const indexRouter = require('./routes/index.router');
 const mainPageRouter = require('./routes/mainPage.router');
 
 const signup = require('./routes/signup.router');
@@ -47,8 +46,8 @@ app.use(cookieParser());
 //   next();
 // });
 
-app.get('/', indexRouter);
-app.get('/cycling-trips', mainPageRouter);
+
+app.use('/', mainPageRouter);
 app.use('/signup', signup);
 app.use('/signin', signin);
 app.use('/logout', logout);
