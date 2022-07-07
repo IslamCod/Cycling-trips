@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   for (let i = 0; i < numLike.length; i++) {
     sumLike += Number(numLike[i].like);
   }
-  sumLike = sumLike.toFixed(2)
+  sumLike = sumLike.toFixed(2);
   const reiting = sumLike / numLike.length;
   await Trip.update({ reiting }, { where: { id: trip_id } });
   res.render('/');

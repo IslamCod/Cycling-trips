@@ -1,6 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-transparent">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Cycling-trips</a>
+    <nav class="navbar bg-transparent">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://img.freepik.com/premium-vector/woman-bicycle-oneline-continuous-single-line-art_494778-645.jpg?w=1380" alt="" width="60" height="54" class="d-inline-block align-text-top" style="border-radius:100px">
+    </a>
+  </div>
+</nav>
+    <a class="navbar-brand nav-item" href="/">HOME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +15,7 @@
       <ul class="navbar-nav">
         {{#if userName}}
             <li class="nav-item">
-                <a class="nav-link">{{userName}}</a>
+                <a class="nav-link active" aria-current="page">Hello, {{userName}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link add" aria-current="page" href=`/cycling-trips/createnewform{{userId}}`>Add new Form</a>

@@ -1,9 +1,9 @@
 <form class="createnewform" action="/cycling-trips/detalinformform" method="post">
     <div class="mb-3">
  <div>Karta</div>
- <div>long{{long}}</div>
- <div>city{{city}}</div>
- <div>name form{{formName}}</div>
+ <div>long{{trip.length}}</div>
+ <div>city{{trip.place}}</div>
+ <div>name form{{trip.}}</div>
  <div>author{{userName}}</div>
  {{#each title}}
   </div>
@@ -17,7 +17,7 @@
     <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
   <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
   <div id="registr" class="form-text">Проверьте правильность введенных данных.</div>
-  {{#if userName}}
+  {{#if userButNoAuthor}}
 
 
   {{/if}}
