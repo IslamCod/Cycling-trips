@@ -1,6 +1,27 @@
+const { createnewform } = document.forms;
+
+console.log(createnewform);
+console.log(document.forms);
+// console.log(tripConfig);
+createnewform?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(createnewform));
+  // console.log({ ...data, createnewform, tripConfig });
+  const response = await fetch("/cycling-trips/createnewform", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...data, tripConfig }),
+  });
+
+  if (response.ok) {
+  }
+});
+
 ymaps.ready(init);
 
-let route = {}
+let route = {};
 let tripConfig = {};
 function init() {
   (myMap = new ymaps.Map("map", {
