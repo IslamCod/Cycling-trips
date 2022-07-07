@@ -7,8 +7,10 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const indexRouter = require('./routes/index.router');
 const mainPageRouter = require('./routes/mainPage.router');
+
 const signup = require('./routes/signup.router');
 const signin = require('./routes/signin.router');
+const logout = require('./routes/logout.router');
 const createnewform = require('./routes/createnewform.router');
 const detalinformform = require('./routes/detalinformform.router');
 
@@ -24,7 +26,6 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 12,
     httpOnly: true,
   },
 };
@@ -40,13 +41,19 @@ hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 app.use(cookieParser());
 
 // место для middleware
-
 // место для ручек
+// app.use((req, res, next) => {
+//   res.locals.userName = req.session?.userName;
+//   next();
+// });
+
 app.get('/', indexRouter);
 app.get('/cycling-trips', mainPageRouter);
-app.use('/cycling-trips/signup', signup);
-app.use('/cycling-trips/signin', signin);
+app.use('/signup', signup);
+app.use('/signin', signin);
+app.use('/logout', logout);
 app.use('/cycling-trips/createnewform', createnewform);
 app.use('/cycling-trips/detalinformform', detalinformform);
+
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));
