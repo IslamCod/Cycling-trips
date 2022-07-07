@@ -4,17 +4,20 @@
     </div>
     23456789
     <div class="col-md-8">
-  {{#each allTrips}}
-      <div class="card-body">
-        <div id="map" style="width: 21vw; height: 25vh"></div>
-        <h5 class="card-title">Маршрут: {{this.title}}</h5>
-        <p class="card-text">Автор маршрута: {{this.userName}}</p>
-        <p class="card-text">Длина маршрута: {{this.length}}</p>
-        <a href="/cycling-trips/{{routeName}}">Подробнее о маршруте</a>
-        <p class="rating">{{trip.rating}}</p>
-      </div>
+      {{#each allTrips}}
+        <div class="card-body">
+          <div id="map" style="width: 21vw; height: 25vh"></div>
+          <h5 class="card-title">Маршрут: {{this.title}}</h5>
+          <div class="map-container">
+            <div id="map" style="width: 400px; height: 300"></div>
+          </div>
+          <p class="card-text">Автор маршрута: {{this.userName}}</p>
+          <p class="card-text">Длина маршрута: {{this.length}}</p>
+          <a href="/cycling-trips/detalinformform">{{routeName}}">Подробнее о
+            маршруте</a>
+          <p class="rating">{{trip.rating}}</p>
+        </div>
+      {{/each}}
     </div>
-    
-  {{/each}}
   </div>
 </div>

@@ -49,25 +49,13 @@ function init() {
         tripConfig.length = length.text;
         tripConfig.start = stateData.from;
         tripConfig.finish = stateData.to;
-
-        // console.log(tripConfig);
-        // // console.log(length);
-        // console.log(stateData.to);
-        // const start = tripConfig.start;
-        // const { text } = length;
-        // const finish = tripConfig.finish;
-        // console.log(tripConfig);
-
-        // route = {length:text, start, finish}
-        console.log('conf', tripConfig);
       }
     });
   });
 }
+
 const { createnewform } = document.forms;
 
-// console.log(createnewform);
-// console.log(tripConfig);
 createnewform.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(createnewform));
@@ -81,7 +69,6 @@ createnewform.addEventListener('submit', async (e) => {
   });
 
   if (response.ok) {
-    // const data = await response.json();
 
   }
 });
