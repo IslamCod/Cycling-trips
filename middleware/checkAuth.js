@@ -1,6 +1,6 @@
 const checkAuth = (req, res, next) => {
   if (req.session.userId) {
-    return res.redirect('/');
+    res.redirect('/');
   }
   next();
 };
@@ -8,7 +8,7 @@ const checkAuth = (req, res, next) => {
 const checkSession = (req, res, next) => {
   if (req.session.userId) {
     res.locals.userId = req.session.userId;
-    res.locals.userName = req.session.userName;
+    res.locals.userName = req.session?.userName;
     return next();
   }
   next();

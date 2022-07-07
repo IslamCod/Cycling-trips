@@ -36,3 +36,20 @@
     background-color: rgb(208, 166, 41); /* Цвет подчеркивания при появлении линии*/
     transition: width 0.5s;  /* Время эффекта */
 }
+
+.container {
+  position: absolute;
+  opacity: .8;
+  top: 130px;
+  transition: 0.3s;
+}
+
+.container:hover {
+  opacity: 1;
+}
+
+.map{
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em
+}
