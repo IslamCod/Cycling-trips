@@ -42,10 +42,10 @@ app.use(cookieParser());
 
 // место для middleware
 // место для ручек
-// app.use((req, res, next) => {
-//   res.locals.userName = req.session?.userName;
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.userName = req.session?.userName;
+  next();
+});
 
 app.get('/', indexRouter);
 app.get('/cycling-trips', mainPageRouter);
