@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-require("dotenv").config();
-const express = require("express");
-const path = require("path");
-const hbs = require("hbs");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
-const FileStore = require("session-file-store")(session);
-const indexRouter = require("./routes/index.router");
-const mainPageRouter = require("./routes/mainPage.router");
-=======
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
@@ -17,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const mainPageRouter = require('./routes/mainPage.router');
->>>>>>> main
 
 const signup = require("./routes/signup.router");
 const signin = require("./routes/signin.router");
@@ -58,15 +46,6 @@ app.use(cookieParser());
 //   next();
 // });
 
-<<<<<<< HEAD
-app.get("/", indexRouter);
-app.get("/cycling-trips", mainPageRouter);
-app.use("/signup", signup);
-app.use("/signin", signin);
-app.use("/logout", logout);
-app.use("/cycling-trips/createnewform", createnewform);
-app.use("/cycling-trips/detalinformform", detalinformform);
-=======
 
 app.use('/', mainPageRouter);
 app.use('/signup', signup);
@@ -74,6 +53,5 @@ app.use('/signin', signin);
 app.use('/logout', logout);
 app.use('/createnewform', createnewform);
 app.use('/detalinformform', detalinformform);
->>>>>>> main
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));

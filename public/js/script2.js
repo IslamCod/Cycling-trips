@@ -1,24 +1,3 @@
-const { createnewform } = document.forms;
-
-console.log(createnewform);
-console.log(document.forms);
-// console.log(tripConfig);
-createnewform?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(createnewform));
-  // console.log({ ...data, createnewform, tripConfig });
-  const response = await fetch("/cycling-trips/createnewform", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ ...data, tripConfig }),
-  });
-
-  if (response.ok) {
-  }
-});
-
 ymaps.ready(init);
 
 let route = {};
@@ -70,28 +49,13 @@ function init() {
         tripConfig.length = length.text;
         tripConfig.start = stateData.from;
         tripConfig.finish = stateData.to;
-
-        // console.log(tripConfig);
-        // // console.log(length);
-        // console.log(stateData.to);
-        // const start = tripConfig.start;
-        // const { text } = length;
-        // const finish = tripConfig.finish;
-        // console.log(tripConfig);
-
-        // route = {length:text, start, finish}
-        console.log('conf', tripConfig);
-        
-
-       
       }
     });
   });
 }
+
 const { createnewform } = document.forms;
 
-// console.log(createnewform);
-// console.log(tripConfig);
 createnewform.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(createnewform))
@@ -105,7 +69,7 @@ createnewform.addEventListener("submit", async (e) => {
   })
 
   if(response.ok){
-    // const data = await response.json();
+  
     
   }
 });
