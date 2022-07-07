@@ -51,8 +51,7 @@ app.get('/cycling-trips', mainPageRouter);
 app.use('/signup', signup);
 app.use('/signin', signin);
 app.use('/logout', logout);
-app.use('/cycling-trips/createnewform', createnewform);
-app.use('/cycling-trips/detalinformform', detalinformform);
-
+app.use('/createnewform', createnewform);
+app.use('/detalinformform', detalinformform);
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));
