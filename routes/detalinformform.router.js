@@ -16,13 +16,13 @@ router.get("/:id", async (req, res) => {
 // /cycling-trips/detalinformform/comment
 router.post("/:id", async (req, res) => {
   const comment = req.body;
-  const comments = Like.create({
-    user_id: user.id,
-    trip_id: id,
-    comment,
-    like: 3,
-  });
-  res.sendStatus(200);
+  // const comments =  await Like.create({
+  //   user_id: user.id,
+  //   trip_id: id,
+  //   comment,
+  //   like: 3,
+  // });
+  res.json({ message: "Ok" });
 });
 
 module.exports = router;

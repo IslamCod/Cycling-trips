@@ -6,7 +6,7 @@ comment.addEventListener("submit", async(e) => {
   e.preventDefault();
 const text = e.target.querySelector('textarea').value;
     const response = await fetch(
-      "http://localhost:3000/cycling-trips/detalinformform/:id",
+      "http://localhost:3000/cycling-trips/detalinformform/comment/:id",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -14,9 +14,9 @@ const text = e.target.querySelector('textarea').value;
       }
     );
 
-    if(response.status === 200){
-        console.log(323232);
-    }
+    // if(response.status === 200){
+    //     console.log(323232);
+    // }
 
   console.log(entry);
  

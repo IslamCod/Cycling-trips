@@ -21,6 +21,7 @@ module.exports = {
           length: "200m",
           link: "123",
           map: "?",
+          reiting: "5",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
