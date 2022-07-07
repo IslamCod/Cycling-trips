@@ -1,24 +1,47 @@
-<form class="createnewform" action="/cycling-trips/detalinformform" method="post">
-    <div class="mb-3">
- <div>Karta</div>
- <div>long{{long}}</div>
- <div>city{{city}}</div>
- <div>name form{{formName}}</div>
- <div>author{{userName}}</div>
- {{#each title}}
+{{!-- <form
+  class="createnewform"
+  action="/cycling-trips/detalinformform/1"
+  method="post"
+> --}}
+  <div class="mb-3">
+    <div>Название маршрута: {{trip.name}}</div>
+    <div>Автор: {{user.name}}</div>
+    <div>Город: {{trip.location}}</div>
+    <div>Длина: {{trip.length}}</div>
+    {{!-- <div>name form{{formName}}</div> --}}
+    {{!-- {{#each title}} --}}
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Название нового маршрута</label>
-    <input name="text" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите название нового маршрута.</div>
+    ~~~Here's map~~~
   </div>
-   <label for="exampleInputPassword1" class="form-label">Описание нового маршрута</label>
-    <input name="text" type="text" class="form-control" id="exampleInputPassword1">
-    <div id="emailHelp" class="form-text">Введите описание нового маршрута.</div>
-  <button type="submit" class="btn btn-primary">Добавить новый маршрут</button>
-  <div id="registr" class="form-text">Проверьте правильность введенных данных.</div>
-  {{#if userName}}
+  <div>Rating: </div>
+  <div class="mb-3">
+    <form name="comm"
+  class="createnewform"
+  action="/cycling-trips/detalinformform/1"
+  method="post"
+>
+    <label
+      for="exampleFormControlTextarea1"
+      class="form-label"
+    >Комментарии</label>
+    <textarea
+      name="comment"
+      class="form-control"
+      id="Textarea1"
+      rows="3"
+    ></textarea>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  <div id="postList">
+    {{#each posts}}
+    <div>{{this.comment}}</div>
+        {{/each}}
+  </div>
+
+  {{!-- {{#if userName}}
 
 
-  {{/if}}
+  {{/if}} --}}
 </form>
+<script src="/js/comment.js"></script>

@@ -1,6 +1,6 @@
 ymaps.ready(init);
 
-let route = {}
+let route = {};
 let tripConfig = {};
 function init() {
   (myMap = new ymaps.Map("map", {

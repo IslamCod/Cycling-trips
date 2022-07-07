@@ -52,3 +52,19 @@
   height: 300px;
   border: 1px solid red;
 }
+.container {
+  position: absolute;
+  opacity: .8;
+  top: 130px;
+  transition: 0.3s;
+}
+
+.container:hover {
+  opacity: 1;
+}
+
+.map{
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em
+}
