@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     length: DataTypes.STRING,
     link: DataTypes.TEXT,//?
     map: DataTypes.TEXT,
+    reiting: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Trip',

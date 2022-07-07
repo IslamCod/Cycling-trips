@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
@@ -11,6 +12,23 @@ const signup = require("./routes/signup.router");
 const signin = require("./routes/signin.router");
 const createnewform = require("./routes/createnewform.router");
 const detalinformform = require("./routes/detalinformform.router");
+=======
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
+const hbs = require('hbs');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+const indexRouter = require('./routes/index.router');
+const mainPageRouter = require('./routes/mainPage.router');
+
+const signup = require('./routes/signup.router');
+const signin = require('./routes/signin.router');
+const logout = require('./routes/logout.router');
+const createnewform = require('./routes/createnewform.router');
+const detalinformform = require('./routes/detalinformform.router');
+>>>>>>> main
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,7 +42,6 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 12,
     httpOnly: true,
   },
 };
@@ -40,13 +57,19 @@ hbs.registerPartials(path.join(process.env.PWD, "views", "partials"));
 app.use(cookieParser());
 
 // место для middleware
-
 // место для ручек
-app.get("/", indexRouter);
-app.get("/cycling-trips", mainPageRouter);
-app.use("/cycling-trips/signup", signup);
-app.use("/cycling-trips/signin", signin);
-app.use("/cycling-trips/createnewform", createnewform);
-app.use("/cycling-trips/detalinformform", detalinformform);
+// app.use((req, res, next) => {
+//   res.locals.userName = req.session?.userName;
+//   next();
+// });
+
+app.get('/', indexRouter);
+app.get('/cycling-trips', mainPageRouter);
+app.use('/signup', signup);
+app.use('/signin', signin);
+app.use('/logout', logout);
+app.use('/cycling-trips/createnewform', createnewform);
+app.use('/cycling-trips/detalinformform', detalinformform);
+
 
 app.listen(PORT, () => console.log(`Connection on PORT: ${PORT}`));

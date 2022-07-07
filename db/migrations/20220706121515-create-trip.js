@@ -30,6 +30,9 @@ module.exports = {
       map: {
         type: Sequelize.TEXT,
       },
+      reiting: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
