@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   async up(queryInterface, Sequelize) {
     /**
@@ -12,22 +10,22 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Trips",
+      'Trips',
       [
         {
           user_id: 1,
-          title: "Check trip",
-          location: "Moscow",
-          length: "200m",
+          title: 'Check trip',
+          location: 'Moscow',
+          length: '200m',
           start: '1',
-          finish:"23",
-          map: "?",
-          rating: "5",
+          finish: '23',
+          map: '?',
+          rating: '5',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
       ],
-      {}
+      {},
     );
   },
 
@@ -38,6 +36,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("Trips", null, {});
+    await queryInterface.bulkDelete('Trips', null, {});
   },
 };

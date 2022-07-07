@@ -6,7 +6,7 @@
     <div class="col-md-8">
       {{#each allTrips}}
         <div class="card-body">
-          <div id="map" style="width: 27vw; height: 40vh"></div>
+          <div id="map" style="width: 21vw; height: 25vh"></div>
           <h5 class="card-title">Маршрут: {{this.title}}</h5>
           <div class="map-container">
             <div id="map" style="width: 400px; height: 300"></div>
@@ -15,7 +15,7 @@
           <p class="card-text">Длина маршрута: {{this.length}}</p>
           <a href="/cycling-trips/detalinformform">{{routeName}}">Подробнее о
             маршруте</a>
-          <p class="rating">(рейтинг)</p>
+          <p class="rating">{{trip.rating}}</p>
         </div>
       {{/each}}
     </div>

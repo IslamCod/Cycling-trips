@@ -1,47 +1,19 @@
-{{!-- <form
-  class="createnewform"
-  action="/cycling-trips/detalinformform/1"
-  method="post"
-> --}}
-  <div class="mb-3">
-    <div>Название маршрута: {{trip.name}}</div>
-    <div>Автор: {{user.name}}</div>
-    <div>Город: {{trip.location}}</div>
-    <div>Длина: {{trip.length}}</div>
-    {{!-- <div>name form{{formName}}</div> --}}
-    {{!-- {{#each title}} --}}
+<form class="createnewform" action="/cycling-trips/detalinformform" method="post">
+    <div class="mb-3">
+ <div>Karta</div>
+ <div>name form{{trip.title}}</div>
+ <div>city{{trip.place}}</div>
+ <div>long{{trip.length}}</div>
+ <div>author{{userName}}</div>
+ <div>rating{{trip.rating}}</div>
+ 
+  {{#if userButNoAuthor}}
+  <div class="comit">
+  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <div id="emailHelp" class="form-text">Оцените, пожалуйста, маршрут</div>
+  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <div id="emailHelp" class="form-text">Оставьте, пожалуйста, свой отзыв о маршруте</div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
   </div>
-  <div class="mb-3">
-    ~~~Here's map~~~
-  </div>
-  <div>Rating: </div>
-  <div class="mb-3">
-    <form name="comm"
-  class="createnewform"
-  action="/cycling-trips/detalinformform/1"
-  method="post"
->
-    <label
-      for="exampleFormControlTextarea1"
-      class="form-label"
-    >Комментарии</label>
-    <textarea
-      name="comment"
-      class="form-control"
-      id="Textarea1"
-      rows="3"
-    ></textarea>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-  <div id="postList">
-    {{#each posts}}
-    <div>{{this.comment}}</div>
-        {{/each}}
-  </div>
-
-  {{!-- {{#if userName}}
-
-
-  {{/if}} --}}
+  {{/if}}
 </form>
-<script src="/js/comment.js"></script>
