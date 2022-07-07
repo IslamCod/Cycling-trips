@@ -15,23 +15,26 @@ module.exports = {
         },
         onDelete: 'cascade',
       },
-      name: {
+      title: {
         type: Sequelize.STRING,
       },
-      place: {
+      location: {
         type: Sequelize.STRING,
       },
       length: {
         type: Sequelize.STRING,
       },
-      link: {
+      start: {
+        type: Sequelize.TEXT,
+      },
+      finish: {
         type: Sequelize.TEXT,
       },
       map: {
         type: Sequelize.TEXT,
       },
-      reiting: {
-        type: Sequelize.STRING,
+      rating: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
