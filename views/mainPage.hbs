@@ -1,18 +1,20 @@
 <div class="card mb-3 container" style="max-width: 540px;">
-  {{!-- {{#each }} --}}
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
     </div>
+    23456789
     <div class="col-md-8">
+  {{#each allTrips}}
       <div class="card-body">
-        <h5 class="card-title">Маршрут: {{routeName}}</h5>
-        <p class="card-text">Автор маршрута: {{authorName}}</p>
-        <p class="card-text">Длина маршрута: {{length}}</p>
+        <div id="map" style="width: 21vw; height: 25vh"></div>
+        <h5 class="card-title">Маршрут: {{this.title}}</h5>
+        <p class="card-text">Автор маршрута: {{this.userName}}</p>
+        <p class="card-text">Длина маршрута: {{this.length}}</p>
         <a href="/cycling-trips/{{routeName}}">Подробнее о маршруте</a>
-        <p class="rating">(рейтинг)</p>
+        <p class="rating">{{trip.rating}}</p>
       </div>
     </div>
+    
+  {{/each}}
   </div>
-  {{!-- {{/each}} --}}
 </div>

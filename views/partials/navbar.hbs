@@ -13,12 +13,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        {{#if userId}}
+        <h1>sadasdasas</h1>
+        {{/if}}
         {{#if userName}}
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page">Hello, {{userName}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link add" aria-current="page" href=`/cycling-trips/createnewform{{userId}}`>Add new Form</a>
+                <a class="nav-link add" aria-current="page" href='/createnewform'>Add new Form</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
@@ -35,3 +38,11 @@
     </div>
   </div>
 </nav>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://cdn0.static1-sima-land.com/content/46171.jpg" class="d-block w-100" style="height: 450px; filter: blur(2px)">
+    </div>
+  </div>
+</div>

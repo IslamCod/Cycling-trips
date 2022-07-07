@@ -13,9 +13,10 @@ router.post('/', async (req, res) => {
   if (user && await bcrypt.compare(password, user.password)) {
     req.session.userName = user.name;
     req.session.userId = user.id;
+    console.log(res.locals);
     return res.redirect('/');
   }
-  return res.render('signup'); // вставить hbs и вы ввели не верную почту или пароль
+  return res.render('error');
 });
 
 module.exports = router;
