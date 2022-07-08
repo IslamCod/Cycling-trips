@@ -98,8 +98,9 @@ const init = () => {
 ymaps.ready(init);
 
 document.getElementById('list').addEventListener('click', async (e) => {
-  e.preventDefault();
   if (e.target.name == 'roteInfo') {
+    e.preventDefault();
+
     const response = await fetch(
       `http://localhost:3000/cycling-trips/${e.target.id}`,
     );

@@ -1,17 +1,17 @@
 <form class="createnewform" action="/detalinformform" method="post">
     <div class="mb-3">
  <div>Karta</div>
- <div>name form{{trip.title}}</div>
- <div>city{{trip.place}}</div>
- <div>long{{trip.length}}</div>
- <div>author{{userName}}</div>
- <div>rating{{trip.rating}}</div>
+ <div>name route: {{trip.title}}</div>
+ <div>city: {{trip.location}}</div>
+ <div>long: {{trip.length}}</div>
+ <div>author: {{trip.User.name}}</div>
+ <div>rating: {{trip.rating}}</div>
  
   {{#if userButNoAuthor}}
   <div class="comit">
-  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <input name="like" type="text" class="form-control" id="exampleInputPassword1">
   <div id="emailHelp" class="form-text">Оцените, пожалуйста, маршрут</div>
-  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <input name="comment" type="text" class="form-control" id="exampleInputPassword1">
   <div id="emailHelp" class="form-text">Оставьте, пожалуйста, свой отзыв о маршруте</div>
   <button type="submit" class="btn btn-primary">Отправить</button>
   </div>

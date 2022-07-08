@@ -68,7 +68,10 @@ createnewform.addEventListener('submit', async (e) => {
     body: JSON.stringify({ ...data, ...tripConfig }),
   });
 
-  if (response.ok) {
-
+  if (response.status === 200) {
+    console.log(33333);
+    window.location = '/';
+  } else {
+    alert('Eror 404');
   }
 });

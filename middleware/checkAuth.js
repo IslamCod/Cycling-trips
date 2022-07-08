@@ -14,4 +14,4 @@ const checkSession = (req, res, next) => {
   next();
 };
 
-module.exports = { checkAuth };
+module.exports = { checkAuth, checkSession};

@@ -3,7 +3,7 @@
     <nav class="navbar bg-transparent">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="https://img.freepik.com/premium-vector/woman-bicycle-oneline-continuous-single-line-art_494778-645.jpg?w=1380" alt="" width="60" height="54" class="d-inline-block align-text-top" style="border-radius:100px">
+     
     </a>
   </div>
 </nav>
@@ -36,10 +36,13 @@
   </div>
 </nav>
 
+ {{#if userName}}
+ {{else}}
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn0.static1-sima-land.com/content/46171.jpg" class="d-block w-100" style="height: 450px; filter: blur(2px)">
+      
     </div>
   </div>
 </div>
+{{/if}}

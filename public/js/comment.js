@@ -1,7 +1,5 @@
-console.log("start");
-const { Trip } = require("../db/models");
-const { User } = require("../db/models");
 const comment = document.forms.comm;
+console.log('drtyuygfd')
 comment.addEventListener("submit", async (e) => {
   e.preventDefault();
   const text = e.target.querySelector("textarea").value;
