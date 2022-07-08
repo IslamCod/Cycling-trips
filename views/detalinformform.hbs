@@ -1,11 +1,11 @@
 <form class="createnewform" action="/detalinformform" method="post">
     <div class="mb-3">
  <div>Karta</div>
- <div>name form{{trip.title}}</div>
- <div>city{{trip.place}}</div>
- <div>long{{trip.length}}</div>
- <div>author{{userName}}</div>
- <div>rating{{trip.rating}}</div>
+ <div>name route: {{this.title}}</div>
+ <div>city: {{this.location}}</div>
+ <div>long: {{this.length}}</div>
+ <div>author: {{this.User.name}}</div>
+ <div>rating: {{this.rating}}</div>
  
   {{#if userButNoAuthor}}
   <div class="comit">
