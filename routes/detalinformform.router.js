@@ -7,6 +7,7 @@ router.get('/:id', async (req, res) => {
   const tripA = await Trip.findOne({ where: { id: req.params.id } }); // include user - find name author
   const authorTrip = tripA.user_id; // dataVelue
   const nameAuthor = await User.findOne({ where: { name: req.params.name } });
+  const ferstlikeforuser = await Like.findOne({ where: { id: req.params.user_id } });
 
   const { id } = req.params.id;
   // console.log(id);
@@ -24,12 +25,12 @@ router.get('/:id', async (req, res) => {
     });
   }
   res.render('detalinformform', {
-    trip, user, posts, userButNoAuthor: req.session.userId && (req.session.userId !== authorTrip),
+    trip, user, posts, userButNoAuthor: req.session.userId && (req.session.userId !== authorTrip) && (ferstlikeforuser === null),
   });
 });
 
 // /cycling-trips/detalinformform/comment
-router.post('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
   const { id } = req.params;
   // const comment = req.body;
   const comment = await Like.create({
