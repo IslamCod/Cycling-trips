@@ -12,6 +12,7 @@ const signin = require("./routes/signin.router");
 const logout = require("./routes/logout.router");
 const createnewform = require("./routes/createnewform.router");
 const detalinformform = require("./routes/detalinformform.router");
+const { checkSession } = require('./middleware/checkAuth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,11 +42,11 @@ app.use(cookieParser());
 
 // место для middleware
 // место для ручек
-app.use((req, res, next) => {
-  res.locals.userName = req.session?.userName;
-  next();
-});
-
+// app.use((req, res, next) => {
+//   res.locals.userName = req.session?.userName;
+//   next();
+// });
+app.use(checkSession);
 
 app.use('/', mainPageRouter);
 app.use('/signup', signup);

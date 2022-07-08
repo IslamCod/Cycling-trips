@@ -10,12 +10,19 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', checkAuth, async (req, res) => {
-  const { name, password, email } = req.body;
-  const newUser = await User.create({ name, password: await bcrypt.hash(password, SALT), email });
-  req.session.user = newUser;
-  console.log(newUser);
-  req.session.userId = newUser.id;
-  res.redirect('/');
+  try {
+    const { name, password, email } = req.body;
+    if (name && email && password) {
+      const newUser = await User.create({ name, password: await bcrypt.hash(password, SALT), email });
+      req.session.userName = newUser.name;
+      req.session.userId = newUser.id;
+      res.redirect('/');
+    } else {
+      res.send('Введите имя, пароль и email');
+    }
+  } catch (err) {
+    res.send('Такой пользователь уже зарегистрирован');
+  }
 });
 
 module.exports = router;

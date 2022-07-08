@@ -10,8 +10,8 @@
 <!-- убрала отсюда карту - Миля-->
           <p class="card-text">Автор маршрута: {{this.userName}}</p>
           <p class="card-text">Длина маршрута: {{this.length}}</p>
-          <a href="#" name="roteInfo" id="{{id}}">{{routeName}}">Подробнее о
-            маршруте</a>
+          <a href="#" name="roteInfo" id="{{id}}">Показать маршрут</a>
+          <a href="/detalinformform/{{this.id}}/{{this.title}}">Подробнее о марштуре</a>
           <p class="rating">{{trip.rating}}</p>
         </div>
       {{/each}}
