@@ -1,9 +1,10 @@
 <form name="createnewform" class="createnewform">
   <div class="mb-3">
+    <div style="width: 100vw;" class="d-flex justify-content-center mt-3">
+      <div id="map" style="width: 155vh; height: 30vw"></div>
+    </div>
 
-    <div id="map" style="width: 70vh; height: 30vw"></div>
-
-    <div class="mb-3">
+    <div class="mb-3" style="margin:10px;">
       <input
         name="title"
         type="text"
@@ -12,13 +13,18 @@
         placeholder="Введите название нового маршрута"
       />
     </div>
-  <input
+    <div  class="mb-3" style="margin:10px;">
+  <input 
     name="location"
     type="text"
     class="form-control"
     id="exampleInputPassword1"
     placeholder="Введите локацию"
   />
-  <button type="submit" class="btn btn-primary" onclick="window.location.href = 'http://localhost:3000/cycling-trips';">Добавить новый маршрут</button>
+    </div>
+  <button type="submit" style="margin:10px;" class="btn btn-primary" onclick="window.location.href = 'http://localhost:3000/cycling-trips';">Добавить новый маршрут</button>
 
 </form>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+<script defer src="/js/script2.js"></script>
