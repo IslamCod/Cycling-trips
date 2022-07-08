@@ -7,11 +7,11 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const mainPageRouter = require('./routes/mainPage.router');
 
-const signup = require('./routes/signup.router');
-const signin = require('./routes/signin.router');
-const logout = require('./routes/logout.router');
-const createnewform = require('./routes/createnewform.router');
-const detalinformform = require('./routes/detalinformform.router');
+const signup = require("./routes/signup.router");
+const signin = require("./routes/signin.router");
+const logout = require("./routes/logout.router");
+const createnewform = require("./routes/createnewform.router");
+const detalinformform = require("./routes/detalinformform.router");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,10 +41,10 @@ app.use(cookieParser());
 
 // место для middleware
 // место для ручек
-// app.use((req, res, next) => {
-//   res.locals.userName = req.session?.userName;
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.userName = req.session?.userName;
+  next();
+});
 
 
 app.use('/', mainPageRouter);

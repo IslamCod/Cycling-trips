@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Trip } = require('../db/models');
+const { checkUser } = require('../middleware/checkUser');
 
-router.get('/', (req, res) => { // id
+router.get('/', checkUser, (req, res) => { // id
   res.render('createnewform');
 });
 
@@ -11,7 +12,6 @@ router.post('/', async (req, res) => {
   } = req.body;
 
   try {
-    console.log(req.body);
     await Trip.create({
       title,
       user_id: req.session.user_id,
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
       title, length, start, finish, location,
     });
   } catch (er) {
-    console.log(er);
+
   }
 });
 
