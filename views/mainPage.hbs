@@ -1,19 +1,16 @@
-<div class="card mb-3 container" style="max-width: 540px;">
+<div class="card mb-3 container" style="max-width: 740px;">
   <div class="row g-0">
     <div class="col-md-4">
     </div>
     23456789
-    <div class="col-md-8">
+    <div id="list" class="col-md-8">
       {{#each allTrips}}
         <div class="card-body">
-          <div id="map" style="width: 27vw; height: 40vh"></div>
           <h5 class="card-title">Маршрут: {{this.title}}</h5>
-          <div class="map-container">
-            <div id="map" style="width: 400px; height: 300"></div>
-          </div>
+
           <p class="card-text">Автор маршрута: {{this.userName}}</p>
           <p class="card-text">Длина маршрута: {{this.length}}</p>
-          <a href="/cycling-trips/detalinformform">{{routeName}}">Подробнее о
+          <a href="#" name="roteInfo" id="{{id}}">{{routeName}}">Подробнее о
             маршруте</a>
           <p class="rating">(рейтинг)</p>
         </div>
@@ -21,3 +18,7 @@
     </div>
   </div>
 </div>
+
+<div id="map" style="width: 90vh; height: 50vw"></div>
+
+<script src="/js/alltrips.js"></script>
