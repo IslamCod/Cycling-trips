@@ -39,9 +39,19 @@ router.post('/', async (req, res) => {
     comment: req.body.comment,
     like: 3,
   });
-  console.log('!!!!', comment);
+  // console.log('!!!!', comment);
 
   res.json(comment);
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    await Entry.destroy({ where: { id: req.params.id } });
+  } catch (error) {
+    return res.json({ isDeleteSuccessful: false, errorMessage: 'Не удалось удалить запись из базы данных.' });
+  }
+
+  return res.json({ isDeleteSuccessful: true });
 });
 
 module.exports = router;

@@ -3,7 +3,6 @@ const { Trip } = require('../db/models');
 const { checkUser } = require('../middleware/checkUser');
 
 router.get('/', checkUser, (req, res) => { // id
- 
   res.render('createnewform');
 });
 
