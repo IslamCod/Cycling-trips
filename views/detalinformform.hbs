@@ -1,19 +1,25 @@
 <form class="createnewform" action="/detalinformform" method="post">
     <div class="mb-3">
  <div>Karta</div>
- <div>name route: {{this.title}}</div>
- <div>city: {{this.location}}</div>
- <div>long: {{this.length}}</div>
- <div>author: {{this.User.name}}</div>
- <div>rating: {{this.rating}}</div>
+ <div>name route: {{trip.title}}</div>
+ <div>city: {{trip.location}}</div>
+ <div>long: {{trip.length}}</div>
+ <div>author: {{trip.User.name}}</div>
+ <div>rating: {{trip.rating}}</div>
  
   {{#if userButNoAuthor}}
   <div class="comit">
-  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <input name="like" type="text" class="form-control" id="exampleInputPassword1">
   <div id="emailHelp" class="form-text">Оцените, пожалуйста, маршрут</div>
-  <input name="text" type="text" class="form-control" id="exampleInputPassword1">
+  <input name="comment" type="text" class="form-control" id="exampleInputPassword1">
   <div id="emailHelp" class="form-text">Оставьте, пожалуйста, свой отзыв о маршруте</div>
   <button type="submit" class="btn btn-primary">Отправить</button>
   </div>
+  {{#if nameAuthor}}
+  <ul id="editAndDeleteUl" class="no-bullets no-padding mar-t-2">
+  <li class="pipe-separate left">
+  <button id="deleteEntryButton" data-entryid="{{entry.id}}" value="delete"
+  class="no-border no-outline no-bg c-white hover-underline">delete</button>
+  {{/if}}
   {{/if}}
 </form>
