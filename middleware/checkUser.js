@@ -1,5 +1,5 @@
 const checkUser = (req, res, next) => {
-  if (req.session?.userId) {
+  if (req.session.userId) {
     next();
   } else res.redirect('/signin');
 };
