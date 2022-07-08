@@ -7,12 +7,12 @@
       {{#each allTrips}}
         <div class="card-body">
           <h5 class="card-title">Маршрут: {{this.title}}</h5>
-
+<!-- убрала отсюда карту - Миля-->
           <p class="card-text">Автор маршрута: {{this.userName}}</p>
           <p class="card-text">Длина маршрута: {{this.length}}</p>
           <a href="#" name="roteInfo" id="{{id}}">{{routeName}}">Подробнее о
             маршруте</a>
-          <p class="rating">(рейтинг)</p>
+          <p class="rating">{{trip.rating}}</p>
         </div>
       {{/each}}
     </div>
