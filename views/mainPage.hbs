@@ -1,21 +1,38 @@
-<div id="map" class="map mt-3" style="width: 155vh; height: 30vw"></div> <!-- подключение карты - Миля-->
-<div class="card mb-3 container" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-    <div id="list" class="col-md-8">
-      {{#each allTrips}}
-        <div class="card-body">
+{{#if userName}} 
+<div id="map" class="main-map"></div>
+{{/if}}
+<div class="main-container">
+
+  <div id="list" class="col-md-8">
+    {{#each allTrips}}
+      <div class="card-body" style="padding: 20px;">
+        <div class="card-image unsplashImg">
+        </div>
+        <div class="info">
           <h5 class="card-title">Маршрут: {{this.title}}</h5>
-<!-- убрала отсюда карту - Миля-->
           <p class="card-text">Автор маршрута: {{this.userName}}</p>
           <p class="card-text">Длина маршрута: {{this.length}}</p>
-          <a href="#" name="roteInfo" id="{{id}}">{{routeName}}">Подробнее о
+          <a href="#" name="roteInfo" id="{{id}}">{{routeName}}Подробнее о
             маршруте</a>
           <p class="rating">{{trip.rating}}</p>
         </div>
-      {{/each}}
-    </div>
+      </div>
+    {{/each}}
   </div>
+
 </div>
 
-<script src="/js/alltrips.js"></script> <!-- подключение скрипта для карты - Миля-->
+<script>
+  let clientID = "WuPWpf0NxljM1fSF1k8YBUSbXUVg8PoyhDYIA8BdYiE" 
+  let endpoint = `https://api.unsplash.com/photos/random/?client_id=${clientID}&query=nature&count=10`;
+  let imageElements = document.querySelectorAll(".unsplashImg") 
+  fetch(endpoint)
+  .then((res) => { return res.json() }) 
+  .then((jsonData)=> {
+  console.log(jsonData); 
+  imageElements.forEach((el, i) => {el.style.backgroundImage = `url` + `(${jsonData[i].urls.small})`; 
+  }) 
+  })
+</script>
+
+<script src="/js/alltrips.js"></script>

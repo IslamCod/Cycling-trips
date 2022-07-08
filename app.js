@@ -42,7 +42,7 @@ app.use(cookieParser());
 // место для middleware
 // место для ручек
 app.use((req, res, next) => {
-  res.locals.userName = req.session?.userName;
+  res.locals.userName = req.session.userName;
   next();
 });
 
