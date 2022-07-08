@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   const {
     title, length, start, finish, location,
   } = req.body;
-
+  console.log(req.body);
   try {
     if (title && length && start && finish && location) {
       await Trip.create({
